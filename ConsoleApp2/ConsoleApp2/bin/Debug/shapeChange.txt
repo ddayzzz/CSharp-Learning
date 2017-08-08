@@ -1,0 +1,15 @@
+ShapeChanged:
+	Width:100
+	Height:30
+ShapeChanged:
+	Width:30
+	Height:20
+ShapeChanged:
+	Width:30
+	Height:200
+ShapeChanged:
+	Width:30
+	Height:20
+ShapeChanged:
+	Width:30
+	Height:200

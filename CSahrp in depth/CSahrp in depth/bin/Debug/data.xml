@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Data>
+	<Products>
+		<Product Name="Book1" Price="9.99" SupplierID="1"/>
+		<Product Name="Book2" Price="19.99" SupplierID="2"/>
+		<Product Name="Book3" Price="58.3" SupplierID="1"/>
+	</Products>
+	<Suppliers>
+		<Supplier Name="Microsft" SupplierID="1"/>
+		<Supplier Name="Intel" SupplierID="2"/>
+	</Suppliers>
+</Data>

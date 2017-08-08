@@ -1,0 +1,9 @@
+G:\C#\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp1.1\ConsoleApp1.deps.json
+G:\C#\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp1.1\ConsoleApp1.runtimeconfig.json
+G:\C#\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp1.1\ConsoleApp1.runtimeconfig.dev.json
+G:\C#\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp1.1\ConsoleApp1.dll
+G:\C#\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp1.1\ConsoleApp1.pdb
+G:\C#\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp1.1\ConsoleApp1.csprojResolveAssemblyReference.cache
+G:\C#\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp1.1\ConsoleApp1.AssemblyInfo.cs
+G:\C#\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp1.1\ConsoleApp1.dll
+G:\C#\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp1.1\ConsoleApp1.pdb

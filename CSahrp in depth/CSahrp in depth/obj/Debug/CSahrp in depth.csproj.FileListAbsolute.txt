@@ -1,0 +1,6 @@
+F:\C#\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.exe.config
+F:\C#\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.exe
+F:\C#\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.pdb
+F:\C#\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.csprojResolveAssemblyReference.cache
+F:\C#\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.exe
+F:\C#\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.pdb
