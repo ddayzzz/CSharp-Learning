@@ -8,6 +8,10 @@ using System.Xml.Linq;
 //async
 using static System.Console;
 using System.Net.Http;
+//for StructLayout
+using System.Runtime.InteropServices;
+using System.Collections;
+
 namespace CSahrp_in_depth
 {
     class Product
@@ -73,6 +77,209 @@ namespace CSahrp_in_depth
     }
     namespace Generics
     {
+        namespace Static
+        {
+            public class Outer<T>
+            {
+                public class Inner<U, V>
+                {
+                    static Inner()
+                    {
+                        Console.WriteLine("Outer<{0}>.Inner<{1},{2}>", typeof(T).Name, typeof(U).Name, typeof(V).Name);
+                    }
+                    public static void DummyMethod() { }
+                }
+                public class Inner
+                {
+                    static Inner()
+                    {
+                        Console.WriteLine("Outer<{0}>.Inner", typeof(T).Name);
+                    }
+                    public static void DummyMethod() { }
+                }
+                
+            }
+            [StructLayout(LayoutKind.Sequential)]
+            class ClassForSizeof:Object
+            {
+
+            }
+            class CountingEnumerable:IEnumerable<int>
+            {
+                private int[] data;
+                public IEnumerator<int> GetEnumerator()
+                {
+                    return new CountingEnumerator();
+                }
+                System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+                {
+                    return GetEnumerator();
+                }
+            }
+            class CountingEnumerator: IEnumerator<int>//继承泛型接口
+            {
+                int current = -1;
+                public bool MoveNext()
+                {
+                    current++;
+                    return current < 10;
+                }
+                public int Current { get { return current; } }//隐式实现了IEnumerator<int>的Current
+                object IEnumerator.Current { get { return Current; } }
+
+                //object IEnumerator.Current => throw new NotImplementedException();
+
+                public void Reset()
+                {
+                    current = -1;
+                }
+                public void Dispose() { }
+            }
+            class Reflection
+            {
+                public static void PrintType<T>()
+                {
+                    Console.WriteLine(typeof(T));
+                }
+            }
+            class Program
+            {
+                static void Main()
+                {
+                    Console.WriteLine(Marshal.SizeOf(new ClassForSizeof()));
+                    System.Collections.ArrayList alb = new System.Collections.ArrayList();
+                    alb.Add((byte)25);
+                    alb.Add((byte)25);
+                    alb.Add((byte)25);
+                    Outer<int>.Inner<string, DateTime>.DummyMethod();
+                    Outer<string>.Inner<int, int>.DummyMethod();
+                    Outer<string>.Inner<int, int>.DummyMethod();//静态构造函数只执行了一次
+                    Outer<string>.Inner.DummyMethod();
+                    Outer<string>.Inner.DummyMethod();
+                    //迭代 http://blog.csdn.net/yangbindxj/article/details/11964343 和 https://msdn.microsoft.com/zh-cn/library/78dfe2yb(v=vs.110).aspx
+                    CountingEnumerable counter = new CountingEnumerable();
+                    foreach(int v in counter)
+                    {
+                        Console.WriteLine(v);
+                    }
+                    //typeof
+                    Console.WriteLine($"{typeof(List<>)}:{typeof(List<>).ContainsGenericParameters}");
+                    Console.WriteLine($"{typeof(Dictionary<,>)}:{typeof(Dictionary<,>).ContainsGenericParameters}");
+                    Console.WriteLine($"{typeof(Dictionary<int,string>)}:{typeof(Dictionary<int,string>).ContainsGenericParameters}");//:False密封的已构造类型
+                    string listTypeName = "System.Collections.Generic.List`1";
+                    Type defByName = Type.GetType(listTypeName);
+                    Type closedByName = Type.GetType(listTypeName + "[System.String]");
+                    Type closedByMethod = defByName.MakeGenericType(typeof(string));//填充类型参数，返回一个已构造的类型
+                    Type closedByTypeof = typeof(List<string>);
+                    Console.WriteLine(closedByMethod == closedByName);
+                    Console.WriteLine(closedByName == closedByTypeof);
+                    Type defByTypeof = typeof(List<>);
+                    Type defByMethod = closedByName.GetGenericTypeDefinition();
+                    Console.WriteLine(defByMethod == defByName);
+                    Console.WriteLine(defByName == defByTypeof);
+                    //反射调用
+                    Type type = typeof(Reflection);
+                    var definition=type.GetMethod("PrintType");
+                    var cons = definition.MakeGenericMethod(typeof(string));
+                    cons.Invoke(null, null);
+                    Console.ReadKey();
+                }
+            }
+        }
+        namespace Equal
+        {
+            class MyClass
+            {
+                public string Name { get; set; }
+                public override bool Equals(object obj)
+                {
+                    if (obj == null)
+                        return this == null;
+                    if (!(obj is MyClass))
+                        return false;
+                    MyClass w = obj as MyClass;//拆箱
+                    return this.Name == w.Name;
+                }
+                public override int GetHashCode()
+                {
+                    return this.Name.GetHashCode();
+                }
+                public static bool operator==(MyClass w1,MyClass w2)
+                {
+                    return w1.Equals(w2);
+                }
+                public static bool operator !=(MyClass w1, MyClass w2)
+                {
+                    return !w1.Equals(w2);
+                }
+                public MyClass(string n) { this.Name = n; }
+            }
+            public sealed class Pair<T1,T2>:IEquatable<Pair<T1,T2>>
+            {
+                private static readonly IEqualityComparer<T1> firstComparer = EqualityComparer<T1>.Default;
+                private static readonly IEqualityComparer<T2> secondComparer = EqualityComparer<T2>.Default;
+                private readonly T1 first;
+                private readonly T2 second;
+                public Pair(T1 first,T2 second)
+                {
+                    this.first = first;
+                    this.second = second;
+                }
+                public T1 First { get { return first; } }
+                public T2 Second { get { return second; } }
+                public bool Equals(Pair<T1,T2> other)
+                {
+                    return firstComparer.Equals(this.first, other.first) &&
+                        secondComparer.Equals(this.second, other.second);
+                }
+                public override bool Equals(object obj)
+                {
+                    return Equals(obj as Pair<T1, T2>);
+
+                }
+                public override int GetHashCode()
+                {
+                    return firstComparer.GetHashCode(first) * 37 + secondComparer.GetHashCode(second);
+                }
+                public static bool operator==(Pair<T1, T2> lhs, Pair<T1, T2> rhs)
+                {
+                    Console.WriteLine("operator==");
+                    return lhs.Equals(rhs);
+                }
+                public static bool operator!=(Pair<T1, T2> lhs, Pair<T1, T2> rhs)
+                {
+                    return !lhs.Equals(rhs);
+                }
+
+            }
+            //非泛型辅助类 https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members
+            public static class Pair
+            {
+                public static Pair<T1, T2> Of<T1, T2>(T1 first, T2 second)
+                {
+                    return new Pair<T1, T2>(first, second);
+                }
+            }
+            class Program
+            {
+                public static void Main()
+                {
+                    //实现1
+                    MyClass m1 = new MyClass("Shu");
+                    MyClass m2 = new MyClass("Shu");
+                    Console.WriteLine(m1 == m2);
+                    Console.WriteLine(m1.Equals(m2));
+                    Console.WriteLine(object.ReferenceEquals(m1, m2));
+                    //实现2
+                    Pair<string, int> pair = Pair.Of("Shu", 1604);
+                    Pair<string, int> pair2 = new Pair<string, int>("Shu", 1604);
+                    Console.WriteLine(pair.Equals(pair2));
+                    Console.WriteLine(pair == pair2);
+                    Console.ReadKey();
+                }
+                
+            }
+        }
         namespace Constrain
         {
             struct RefSample<T> where T:struct
@@ -98,7 +305,31 @@ namespace CSahrp_in_depth
                 {
 
                 }
-                //
+                //类型判断
+                static bool AreRefEqual<T>(T first,T second)
+                    where T:class
+                {
+                    return first == second;
+                }
+                public static int CompareToDefault<T>(T value)
+                    where T:IComparable<T>
+                {
+                    return value.CompareTo(default(T));
+                }
+                public static void Main()
+                {
+                    Console.WriteLine(CompareToDefault<string>("NAIVE"));//引用类型默认值为null
+                    Console.WriteLine(CompareToDefault<int>(1));
+                    Console.WriteLine(CompareToDefault(DateTime.MinValue));
+                    //重载对象的判断 可以去看看：http://www.cnblogs.com/yang_sy/p/3582946.html
+                    string name = "Jon";
+                    string i1 = "My name is " + name;
+                    string i2 = "My name is " + name;
+                    string i3 = null;
+                    Console.WriteLine(i1 == i2);//True
+                    Console.WriteLine(AreRefEqual(i1, i3));//False
+                    Console.ReadKey();
+                }
             }
             //类型转换
             class StreamReader<T> where T: BaseClass,

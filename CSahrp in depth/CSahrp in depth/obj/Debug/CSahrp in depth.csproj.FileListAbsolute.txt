@@ -4,3 +4,9 @@ F:\C#\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.pdb
 F:\C#\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.csprojResolveAssemblyReference.cache
 F:\C#\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.exe
 F:\C#\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.pdb
+\\Desktop-jeu8m8s\d\CSharp-Learning\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.exe.config
+\\Desktop-jeu8m8s\d\CSharp-Learning\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.exe
+\\Desktop-jeu8m8s\d\CSharp-Learning\CSahrp in depth\CSahrp in depth\bin\Debug\CSahrp in depth.pdb
+\\Desktop-jeu8m8s\d\CSharp-Learning\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.csprojResolveAssemblyReference.cache
+\\Desktop-jeu8m8s\d\CSharp-Learning\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.exe
+\\Desktop-jeu8m8s\d\CSharp-Learning\CSahrp in depth\CSahrp in depth\obj\Debug\CSahrp in depth.pdb
