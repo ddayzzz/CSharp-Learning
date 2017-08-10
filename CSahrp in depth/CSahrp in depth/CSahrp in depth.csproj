@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSahrp_in_depth.Var</StartupObject>
+    <StartupObject>CSahrp_in_depth.ProductionCompare.ProductComparer</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
