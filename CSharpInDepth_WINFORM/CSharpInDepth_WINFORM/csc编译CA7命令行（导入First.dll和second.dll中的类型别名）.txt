@@ -1,0 +1,1 @@
+csc CA7.cs /r:FirstAlias=First.dll /r:SecondAlias=Second.dll
