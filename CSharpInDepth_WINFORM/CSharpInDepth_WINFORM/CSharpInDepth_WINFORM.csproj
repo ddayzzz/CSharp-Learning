@@ -36,7 +36,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpInDepth_WINFORM.CA9_AnonymousTypeDeduce.Program</StartupObject>
+    <StartupObject>CSharpInDepth_WINFORM.CA11_LINQ_To_Objects.GropyBy.Code_11_1x</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -61,10 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CA10_ExpandedMethod.cs" />
+    <Compile Include="CA11_3_Sort_Filter_SampleData.cs" />
+    <Compile Include="CA11_LINQ_To_Objects.cs" />
     <Compile Include="CA6_Iterator.cs" />
     <Compile Include="CA7.6_PInvoker.cs" />
     <Compile Include="CA8.1_AutoProperty.cs" />
     <Compile Include="CA9.2_ListOperation.cs" />
+    <Compile Include="DateTimeRange.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

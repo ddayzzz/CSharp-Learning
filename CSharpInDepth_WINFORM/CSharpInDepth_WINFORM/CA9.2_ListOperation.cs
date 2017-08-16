@@ -110,9 +110,43 @@ namespace CSharpInDepth_WINFORM
                 Console.WriteLine(function());
 
             }
+            //例子9-11
+            static void PrintConvertedValue<TInput,TOutput>(TInput input, Converter<TInput,TOutput> converter)
+            {
+                Console.WriteLine(converter(input));
+            }
+            //例子9-15 多级类型推断
+            static void ConvertTwice<TInput,TMiddle,TOutput>(
+                TInput input,
+                Converter<TInput,TMiddle> first,
+                Converter<TMiddle,TOutput> second)
+            {
+                TMiddle middle = first(input);
+                TOutput output = second(middle);
+                Console.WriteLine(output);
+            }
+            //lambda返回不同的类型
+            static T ReturnDifferentType<T>(Func<T> fcn)
+            {
+                return fcn();
+            }
             static void Main()
             {
-                WriteResult(delegate { return 5; });
+                //WriteResult(delegate { return 5; });
+                //将没有指定参数名的lambda表达式传给泛型的方法
+                //PrintConvertedValue("20", x => x.Length);
+                //多级推断
+                ConvertTwice("Stri",
+                    text => text.Length,
+                    length => Math.Sqrt(length));
+                var oo=ReturnDifferentType(delegate
+                {
+                    if (DateTime.Now.Hour < 11)
+                        return 10;
+                    else
+                        return 10.2;
+                });
+                Console.ReadKey();
             }
         }
     }

@@ -127,7 +127,7 @@ namespace CSharpInDepth_WINFORM
             }
         }
         //enumerate示例
-        class EnumerateDemo
+        public class EnumerateDemo
         {
             //
             public static IEnumerable<string> ReadLines(Func<TextReader> provider)
