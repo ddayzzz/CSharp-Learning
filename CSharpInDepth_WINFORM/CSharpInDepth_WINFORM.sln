@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpInDepth_WINFORM", "CSharpInDepth_WINFORM\CSharpInDepth_WINFORM.csproj", "{903B8FB9-47AE-473C-B373-FF397247F8BC}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Second", "Second\Second.csproj", "{A830C050-1E32-4D3F-9A30-49BEDF1A768D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendAssemblyDemo_Source", "FriendAssemblyDemo_Source\FriendAssemblyDemo_Source.csproj", "{D7655001-851A-44E2-B939-0850A63692A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{6B264249-B609-400C-A647-2F95B61C4899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA12_LINQ_TO_SQL", "CA12_LINQ_TO_SQL\CA12_LINQ_TO_SQL.csproj", "{C2590E4F-7493-471E-9C08-C40F2B24CAC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA12_3_LINQ_TO_XML", "CA12_3_LINQ_TO_XML\CA12_3_LINQ_TO_XML.csproj", "{00F05BC0-CCE1-4A4D-BF6B-832958B94095}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +39,23 @@ Global
 		{D7655001-851A-44E2-B939-0850A63692A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7655001-851A-44E2-B939-0850A63692A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7655001-851A-44E2-B939-0850A63692A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B264249-B609-400C-A647-2F95B61C4899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B264249-B609-400C-A647-2F95B61C4899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B264249-B609-400C-A647-2F95B61C4899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B264249-B609-400C-A647-2F95B61C4899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2590E4F-7493-471E-9C08-C40F2B24CAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2590E4F-7493-471E-9C08-C40F2B24CAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2590E4F-7493-471E-9C08-C40F2B24CAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2590E4F-7493-471E-9C08-C40F2B24CAC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F05BC0-CCE1-4A4D-BF6B-832958B94095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F05BC0-CCE1-4A4D-BF6B-832958B94095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F05BC0-CCE1-4A4D-BF6B-832958B94095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F05BC0-CCE1-4A4D-BF6B-832958B94095}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD7B295B-55BC-4B27-ACB2-AFEA8A54F4C1}
 	EndGlobalSection
 EndGlobal

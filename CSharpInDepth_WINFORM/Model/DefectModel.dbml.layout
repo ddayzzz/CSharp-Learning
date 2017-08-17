@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DefectModel">
+  <DataContextMoniker Name="/DefectModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="44912741-a209-4f90-99c1-5c54a6318150" absoluteBounds="3.5, 0.75, 2, 2.4612756347656251">
+      <DataClassMoniker Name="/DefectModelDataContext/Defect" />
+      <nestedChildShapes>
+        <elementListCompartment Id="903cbd3e-2ab6-4284-98d8-d450eb401a73" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4c07392-e6c9-4dc6-b409-fbbe432e0d2e" absoluteBounds="3.5, 4.25, 2, 1.3525109863281255">
+      <DataClassMoniker Name="/DefectModelDataContext/NotificationSubscription" />
+      <nestedChildShapes>
+        <elementListCompartment Id="420a3c98-1756-441f-90be-a1b4ba1510e5" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3d47214-1c3f-4640-84d8-67459cd00ae6" absoluteBounds="0.75, 4.375, 2, 1.1677168782552085">
+      <DataClassMoniker Name="/DefectModelDataContext/Project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf23160e-3477-4992-a42c-f461b5fd81d1" absoluteBounds="0.765, 4.835, 1.9700000000000002, 0.60771687825520826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1896316-c647-41dd-be7a-289110af1ad9" absoluteBounds="0.75, 2.125, 2, 1.3525109863281251">
+      <DataClassMoniker Name="/DefectModelDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cd1b742-6004-4060-af4e-8caa07320bfe" absoluteBounds="0.765, 2.585, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.375); (3.125 : 4); (3.125 : 1.98063781738281); (3.5 : 1.98063781738281)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DefectModelDataContext/Project/Project_Defect" />
+      <nodes>
+        <classShapeMoniker Id="d3d47214-1c3f-4640-84d8-67459cd00ae6" />
+        <classShapeMoniker Id="44912741-a209-4f90-99c1-5c54a6318150" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.9901109391276); (3.5 : 4.9901109391276)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DefectModelDataContext/Project/Project_NotificationSubscription" />
+      <nodes>
+        <classShapeMoniker Id="d3d47214-1c3f-4640-84d8-67459cd00ae6" />
+        <classShapeMoniker Id="f4c07392-e6c9-4dc6-b409-fbbe432e0d2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.66813781738281); (3.04166666666667 : 2.66813781738281 : JumpStart); (3.20833333333333 : 2.66813781738281 : JumpEnd); (3.5 : 2.66813781738281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DefectModelDataContext/User/User_Defect" />
+      <nodes>
+        <classShapeMoniker Id="c1896316-c647-41dd-be7a-289110af1ad9" />
+        <classShapeMoniker Id="44912741-a209-4f90-99c1-5c54a6318150" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.33406890869141); (3.04166666666667 : 2.33406890869141 : JumpStart); (3.20833333333333 : 2.33406890869141 : JumpEnd); (3.5 : 2.33406890869141)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DefectModelDataContext/User/User_Defect1" />
+      <nodes>
+        <classShapeMoniker Id="c1896316-c647-41dd-be7a-289110af1ad9" />
+        <classShapeMoniker Id="44912741-a209-4f90-99c1-5c54a6318150" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

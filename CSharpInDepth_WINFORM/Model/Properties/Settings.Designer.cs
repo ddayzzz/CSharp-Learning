@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSharpInDepth_WINFORM.Properties {
+namespace Model.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,33 @@ namespace CSharpInDepth_WINFORM.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"|DataDirectory|\\SkeetySoftDefects.mdf\"" +
+            ";Integrated Security=True;Connect Timeout=30;User Instance=True")]
+        public string SkeetySoftDefectsConnectionString {
+            get {
+                return ((string)(this["SkeetySoftDefectsConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\SkeetysoftDef" +
             "ects.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string SkeetysoftDefectsConnectionString {
+        public string SkeetysoftDefectsConnectionString1 {
             get {
-                return ((string)(this["SkeetysoftDefectsConnectionString"]));
+                return ((string)(this["SkeetysoftDefectsConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QBVP6A5;Initial Catalog=CSharp_SQL;Persist Security Info=True" +
+            ";User ID=sa;Password=@wangshu1715$")]
+        public string CSharp_SQLConnectionString {
+            get {
+                return ((string)(this["CSharp_SQLConnectionString"]));
             }
         }
     }

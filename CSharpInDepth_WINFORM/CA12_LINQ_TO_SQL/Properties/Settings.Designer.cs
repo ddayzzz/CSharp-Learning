@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSharpInDepth_WINFORM.Properties {
+namespace CA12_LINQ_TO_SQL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,11 @@ namespace CSharpInDepth_WINFORM.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\SkeetysoftDef" +
-            "ects.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string SkeetysoftDefectsConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QBVP6A5;Initial Catalog=CSharp_SQL;Persist Security Info=True" +
+            ";User ID=sa;Password=@wangshu1715$")]
+        public string CSharp_SQLConnectionString {
             get {
-                return ((string)(this["SkeetysoftDefectsConnectionString"]));
+                return ((string)(this["CSharp_SQLConnectionString"]));
             }
         }
     }
