@@ -51,7 +51,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpInDepth_WINFORM.CA12_LINQToSQL.Find</StartupObject>
+    <StartupObject>CSharpInDepth_WINFORM.AutoProperty.Person</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
