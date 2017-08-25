@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic", "Dynamic\Dynamic.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{E5F42959-6624-4FA3-8F7D-B3310815FB08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPL_FromCodeProject", "TPL_FromCodeProject\TPL_FromCodeProject.csproj", "{B6D21B06-5F9D-4F73-BE61-55F658B21E72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{E5F42959-6624-4FA3-8F7D-B3310815FB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5F42959-6624-4FA3-8F7D-B3310815FB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5F42959-6624-4FA3-8F7D-B3310815FB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D21B06-5F9D-4F73-BE61-55F658B21E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D21B06-5F9D-4F73-BE61-55F658B21E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D21B06-5F9D-4F73-BE61-55F658B21E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D21B06-5F9D-4F73-BE61-55F658B21E72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

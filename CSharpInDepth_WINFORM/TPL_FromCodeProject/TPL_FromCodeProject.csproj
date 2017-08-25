@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5F42959-6624-4FA3-8F7D-B3310815FB08}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Async</RootNamespace>
-    <AssemblyName>Async</AssemblyName>
+    <ProjectGuid>{B6D21B06-5F9D-4F73-BE61-55F658B21E72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TPL_FromCodeProject</RootNamespace>
+    <AssemblyName>TPL_FromCodeProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,57 +32,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Demo.App</StartupObject>
+    <StartupObject>TPL_FromCodeProject.WinFormMain</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncException.cs" />
-    <Compile Include="AsyncForm.cs">
+    <Compile Include="DownloadDemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AsyncForm.Designer.cs">
-      <DependentUpon>AsyncForm.cs</DependentUpon>
+    <Compile Include="DownloadDemo.Designer.cs">
+      <DependentUpon>DownloadDemo.cs</DependentUpon>
     </Compile>
-    <Compile Include="AsyncImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StateMachine.cs" />
-    <EmbeddedResource Include="AsyncForm.resx">
-      <DependentUpon>AsyncForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+    <Compile Include="SynchronizationContextDemo.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    <Compile Include="SynchronizationContextDemo.Designer.cs">
+      <DependentUpon>SynchronizationContextDemo.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DownloadDemo.resx">
+      <DependentUpon>DownloadDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SynchronizationContextDemo.resx">
+      <DependentUpon>SynchronizationContextDemo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

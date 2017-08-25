@@ -51,7 +51,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpInDepth_WINFORM.AutoProperty.Person</StartupObject>
+    <StartupObject>CSharpInDepth_WINFORM.A</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -86,9 +86,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A.cs" />
     <Compile Include="CA10_ExpandedMethod.cs" />
     <Compile Include="CA11_3_Sort_Filter_SampleData.cs" />
     <Compile Include="CA11_LINQ_To_Objects.cs" />
+    <Compile Include="CA16.CS" />
     <Compile Include="CA6_Iterator.cs" />
     <Compile Include="CA7.6_PInvoker.cs" />
     <Compile Include="CA8.1_AutoProperty.cs" />
