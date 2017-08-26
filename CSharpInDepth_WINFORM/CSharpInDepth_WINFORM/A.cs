@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpInDepth_WINFORM
 {
+    using System.Collections.ObjectModel;
     //附录A
     class A
     {
@@ -42,6 +43,23 @@ namespace CSharpInDepth_WINFORM
             {
                 Console.WriteLine(item);
             }
+            Console.ReadKey();
+        }
+    }
+    //附录B
+    class B
+    {
+        static void Main()
+        {
+            HashSet<int> hashSet = new HashSet<int>()
+            {
+                25,10000,2,-9
+            };
+            foreach(var item in hashSet)
+            {
+                Console.WriteLine(item);
+            }
+            
             Console.ReadKey();
         }
     }
